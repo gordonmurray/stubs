@@ -1,12 +1,12 @@
 {
-  "name": "vendor_name/package_name",
-  "description": "description_text",
+  "name": "murrion/stubs",
+  "description": "A simple back end for the Stubs Android app, to receive submitted images, OCR and save them",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "author's name",
-      "email": "email@example.com"
+      "name": "Gordon Murray",
+      "email": "projects@murrion.com"
     }
   ],
   "require": {
