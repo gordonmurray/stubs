@@ -16,6 +16,8 @@ fclose($file);
 
 $tesseract = new TesseractOCR('images/' . $filename);
 
+$tesseract->setLanguage('eng');
+
 $text = $tesseract->recognize();
 
 echo "Image uploaded successfully [$text]";
