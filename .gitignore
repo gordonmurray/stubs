@@ -1,2 +1,4 @@
-/images/*
-.idea
+/images
+/.idea
+/vendor
+composer.phar

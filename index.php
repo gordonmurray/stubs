@@ -1,19 +1,21 @@
 <?php
-// Get image string posted from Android App
+
+require_once 'vendor/autoload.php';
+
 $base = $_REQUEST['image'];
-// Get file name posted from Android App
 $filename = $_REQUEST['filename'];
 $imei = $_REQUEST['imei'];
 $email = $_REQUEST['email'];
-echo $imei;
-echo $email;
 
-// Decode Image
 $binary = base64_decode($base);
 header('Content-Type: bitmap; charset=utf-8');
-// Images will be saved under 'www/imgupload/uplodedimages' folder
+
 $file = fopen('images/' . $filename, 'wb');
-// Create File
 fwrite($file, $binary);
 fclose($file);
-echo 'Image upload complete, Please check your php file directory';
+
+$tesseract = new TesseractOCR('images/' . $filename);
+
+$text = $tesseract->recognize();
+
+echo "Image uploaded successfully [$text]";
