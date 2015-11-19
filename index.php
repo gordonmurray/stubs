@@ -2,12 +2,12 @@
 
 require_once 'vendor/autoload.php';
 
-$base = $_REQUEST['image'];
+$imagecontent = $_REQUEST['image'];
 $filename = $_REQUEST['filename'];
 $imei = $_REQUEST['imei'];
 $email = $_REQUEST['email'];
 
-$binary = base64_decode($base);
+$binary = base64_decode($imagecontent);
 header('Content-Type: bitmap; charset=utf-8');
 
 $file = fopen('images/' . $filename, 'wb');
