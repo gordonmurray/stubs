@@ -11,5 +11,8 @@
   ],
   "require": {
     "thiagoalessio/tesseract_ocr": "0.2.1"
+  },
+  "autoload": {
+    "psr-4": {"Murrion\\": "src/"}
   }
 }

@@ -1,23 +1,16 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once('bootstrap.php');
 
-$imagecontent = $_REQUEST['image'];
-$filename = $_REQUEST['filename'];
-$imei = $_REQUEST['imei'];
-$email = $_REQUEST['email'];
+$postedData = $stubs->receivePostedData();
 
-$binary = base64_decode($imagecontent);
+$binary = base64_decode($postedData['imageContent']);
 header('Content-Type: bitmap; charset=utf-8');
 
-$file = fopen('images/' . $filename, 'wb');
-fwrite($file, $binary);
-fclose($file);
+$stubs->saveLocalFile($postedData['filename'], $binary);
 
-$tesseract = new TesseractOCR('images/' . $filename);
+//$tesseract = new TesseractOCR('images/' . $filename);
+//$tesseract->setLanguage('eng');
+//$text = $tesseract->recognize();
 
-$tesseract->setLanguage('eng');
-
-$text = $tesseract->recognize();
-
-echo "Image uploaded successfully [$text]";
+echo "Image uploaded successfully";

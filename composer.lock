@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "750937ed4ed4799ead82ef993e28e232",
-    "content-hash": "6eddda150dd46cd4cdb2b253d99f17b5",
+    "hash": "632fecf52ea50705cdcd4b4392734b2a",
+    "content-hash": "93b0f11127e6357336323128ff517687",
     "packages": [
         {
             "name": "thiagoalessio/tesseract_ocr",
