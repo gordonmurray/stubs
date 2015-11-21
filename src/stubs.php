@@ -30,6 +30,7 @@ class stubs
      */
     public function saveLocalFile($filename, $binary)
     {
+        @mkdir('images');
         $file = fopen('images/' . $filename, 'wb');
         fwrite($file, $binary);
         fclose($file);
