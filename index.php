@@ -5,9 +5,9 @@ require_once('bootstrap.php');
 $postedData = $stubs->receivePostedData();
 
 if ($postedData['imageContent'] != '') {
-    $binary = base64_decode($postedData['imageContent']);
-    header('Content-Type: bitmap; charset=utf-8');
 
+    $binary = base64_decode($postedData['imageContent']);
+    
     $stubs->saveLocalFile($postedData['filename'], $binary);
 
 //$tesseract = new TesseractOCR('images/' . $filename);
